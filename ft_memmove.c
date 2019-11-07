@@ -6,7 +6,7 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:58:09 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/07 18:02:27 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/07 20:12:55 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	s = (char *)src;
 	if (d > s)
 	{
-		tmp1 = s + (n - 1);
-		tmp2 = d + (n - 1);
+		tmp1 = d + (n - 1);
+		tmp2 = s + (n - 1);
 		while (n--)
 			*tmp1-- = *tmp2--;
 	}

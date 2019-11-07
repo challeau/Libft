@@ -6,7 +6,7 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:53:44 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/07 19:00:28 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/07 20:57:28 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 int			ft_strlen(const char *str);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_strnlen(char *str, size_t n);
 char		*ft_strnstr(const char *s, const char *to_find, size_t len);
 char		*ft_strrchr(const char *s, int c);
 char		*ft_strtrim(char const *s1, char const *set);

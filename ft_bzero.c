@@ -6,13 +6,11 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:50:49 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/05 13:50:51 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/07 19:28:17 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memset (void *s, int c, size_t n);
 
 void	ft_bzero(char *str, size_t n)
 {

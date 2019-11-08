@@ -6,7 +6,7 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 22:23:50 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/08 00:03:59 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/08 02:35:08 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ char	*ft_strnew(const char *s, char c)
 		i++;
 	if (!(dst = (char *)malloc((i + 1) * sizeof(char))))
 		return (NULL);
-	while (*s != c)
+	i = 0;
+	while (s[i] != c)
 	{
-		*dst = *s;
-		dst++;
-		s++;
+		dst[i] = s[i];
+		i++;
 	}
-	*dst = '\0';
+	dst[i] = '\0';
 	return (dst);
 }
 
@@ -61,7 +61,7 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		sep_nb;
-	char	**dst = NULL;
+	char	**dst;
 
 	i = 0;
 	sep_nb = ft_sep_count(s, c);
@@ -81,16 +81,4 @@ char	**ft_split(char const *s, char c)
 	}
 	dst[i] = NULL;
 	return (dst);
-}
-
-int        main(void)
-{
-	int i = 0;
-	char    **tab;
-	tab = ft_split("      jaime les   bites", ' ');
-	while (i < 4)
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
 }

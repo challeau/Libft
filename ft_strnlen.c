@@ -6,7 +6,7 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 20:53:58 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/07 20:55:27 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/08 03:25:49 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	ft_strnlen(char *str, size_t n)
 {
 	size_t	i;
 
-	 i = 0;
-	 while (str[i] && i < n)
-	 	i++;
+	i = 0;
+	while (str[i] && i < n)
+		i++;
 	return (i);
 }

@@ -1,22 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 16:03:45 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/09 17:22:33 by challeau         ###   ########.fr       */
+/*   Created: 2019/11/09 16:32:02 by challeau          #+#    #+#             */
+/*   Updated: 2019/11/09 16:34:31 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	if (!dst && !src)
-		return (dst);
-	while (n--)
-		((char *)dst)[n] = ((char *)src)[n];
-	return (dst);
-}
+void ft_lstadd_back(t_list **alst, t_list *new)

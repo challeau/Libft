@@ -6,7 +6,7 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:50:56 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/09 17:43:00 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/11 17:45:51 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void *dst;
 
-	if (nmemb == 0 || size == 0)
+	if (!(dst = malloc(nmemb * size)))
 		return (NULL);
-	dst = (void *)malloc((nmemb) * size);
 	if (dst)
 		ft_bzero(dst, nmemb * size);
 	return (dst);

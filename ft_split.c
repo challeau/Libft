@@ -6,7 +6,7 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 22:23:50 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/08 02:35:08 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/11 20:53:05 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,12 @@ char	**ft_split(char const *s, char c)
 	int		sep_nb;
 	char	**dst;
 
+	if (!s || !c)
+		return (NULL);
 	i = 0;
 	sep_nb = ft_sep_count(s, c);
 	if (!(dst = (char **)malloc((sep_nb + 1) * sizeof(char *))))
-		return (0);
+		return (NULL);
 	while (*s)
 	{
 		while (*s && *s == c)

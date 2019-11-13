@@ -6,7 +6,7 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 22:23:50 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/11 20:53:05 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/13 19:32:39 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,18 @@
 int		ft_sep_count(char const *s, char c)
 {
 	int	i;
-	int	flg;
 
 	i = 0;
 	while (*s == c)
 		s++;
 	while (*s)
 	{
-		flg = 0;
 		while (*s == c)
-		{
-			if (flg == 0)
-			{
-				i++;
-				flg++;
-			}
 			s++;
-		}
-		s++;
+		if (*s)
+			i++;
+		while (*s != c && *s)
+			s++;
 	}
 	return (i);
 }
@@ -40,15 +34,16 @@ int		ft_sep_count(char const *s, char c)
 char	*ft_strnew(const char *s, char c)
 {
 	int		i;
+	int		size;
 	char	*dst;
 
 	i = 0;
-	while (s[i] != c)
-		i++;
-	if (!(dst = (char *)malloc((i + 1) * sizeof(char))))
+	size = 0;
+	while (s[size] != c && s[size])
+		size++;
+	if (!(dst = (char *)malloc((size + 1) * sizeof(char))))
 		return (NULL);
-	i = 0;
-	while (s[i] != c)
+	while (i < size)
 	{
 		dst[i] = s[i];
 		i++;
@@ -73,7 +68,7 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*s && *s == c)
 			s++;
-		if (*s && *s != c)
+		if (*s)
 		{
 			dst[i] = ft_strnew(s, c);
 			i++;

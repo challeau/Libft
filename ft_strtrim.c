@@ -6,7 +6,7 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 23:06:51 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/13 19:41:07 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/15 22:26:40 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		size;
 	char	*dst;
 
-	if (!s1 || !set)
+	if (!s1 || !set || s1[0] == '\0' || set[0] == '\0')
 		return (NULL);
 	i = 0;
-	size = ft_minus_len(s1, set);
-	if (size <= 0)
+	if ((size = ft_minus_len(s1, set)) <= 0)
 	{
 		if (!(dst = (char *)malloc(1 * sizeof(char))))
 			return (NULL);
-		return (dst = "\0");
+		dst[0] = '\0';
+		return (dst);
 	}
 	if (!(dst = (char *)malloc((size + 1) * sizeof(char))))
 		return (NULL);

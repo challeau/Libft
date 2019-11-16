@@ -6,7 +6,7 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 17:04:52 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/15 22:31:00 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/16 02:05:18 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s || s[0] == '\0')
 		return (NULL);
-	if (!(dst = (char *)malloc(ft_strlen(s) * sizeof(char) + 1)))
-		return (NULL);
-	if (start > (unsigned int)ft_strlen(s) || len >= (size_t)ft_strlen(s))
+	if (start > (unsigned int)ft_strlen(s) || len > (size_t)ft_strlen(s))
 	{
+		if (!(dst = (char *)malloc(sizeof(char))))
+			return (NULL);
 		dst[0] = '\0';
 		return (dst);
 	}
+	if (!(dst = (char *)malloc((len + 1) * sizeof(char))))
+		return (NULL);
 	s += start;
 	while (i < len && *s)
 	{

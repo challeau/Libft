@@ -6,13 +6,13 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 22:23:50 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/16 01:51:39 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/18 23:22:44 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_sep_count(char const *s, char c)
+static int	ft_sep_count(char const *s, char c)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ int		ft_sep_count(char const *s, char c)
 	return (i);
 }
 
-char	*ft_strnew(const char *s, char c)
+static char	*ft_strnew(const char *s, char c)
 {
 	int		i;
 	int		size;
@@ -52,17 +52,15 @@ char	*ft_strnew(const char *s, char c)
 	return (dst);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	int		i;
-	int		sep_nb;
 	char	**dst;
 
-	if (!s || !c)
+	if (!s)
 		return (NULL);
 	i = 0;
-	sep_nb = ft_sep_count(s, c);
-	if (!(dst = (char **)malloc((sep_nb + 1) * sizeof(char *))))
+	if (!(dst = (char **)malloc((ft_sep_count(s, c) + 1) * sizeof(char *))))
 		return (NULL);
 	while (*s)
 	{
@@ -70,8 +68,11 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s)
 		{
-			dst[i] = ft_strnew(s, c);
-			i++;
+			if (!(dst[i++] = ft_strnew(s, c)))
+			{
+				free(dst);
+				return (NULL);
+			}
 			while (*s && *s != c)
 				s++;
 		}

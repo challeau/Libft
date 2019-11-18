@@ -6,13 +6,13 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 23:06:51 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/16 02:33:44 by challeau         ###   ########.fr       */
+/*   Updated: 2019/11/18 23:20:26 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_is_set(char const c, char const *set)
+static int	ft_is_set(char const c, char const *set)
 {
 	while (*set && c)
 	{
@@ -23,7 +23,7 @@ int		ft_is_set(char const c, char const *set)
 	return (0);
 }
 
-int		ft_minus_len(char const *s, char const *set)
+static int	ft_minus_len(char const *s, char const *set)
 {
 	int i;
 
@@ -46,7 +46,7 @@ int		ft_minus_len(char const *s, char const *set)
 	return (i);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		size;
@@ -56,15 +56,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	if ((size = ft_minus_len(s1, set)) <= 0 || s1[0] == '\0')
-	{
-		if (!(dst = (char *)malloc(1 * sizeof(char))))
-			return (NULL);
-		dst[0] = '\0';
-		return (dst);
-	}
+		return (ft_strdup(""));
 	if (!(dst = (char *)malloc((size + 1) * sizeof(char))))
 		return (NULL);
-	while (ft_is_set(*s1, set) == 1 && *s1)
+	while (ft_is_set(*s1, set) && *s1)
 		s1++;
 	while (*s1 && i < size)
 	{

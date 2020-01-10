@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 16:04:38 by challeau          #+#    #+#             */
-/*   Updated: 2019/11/05 16:12:29 by challeau         ###   ########.fr       */
+/*   Created: 2020/01/10 09:31:11 by challeau          #+#    #+#             */
+/*   Updated: 2020/01/10 09:31:49 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+int	ft_strlen(char *str)
 {
 	int i;
 

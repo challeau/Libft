@@ -6,7 +6,7 @@
 /*   By: challeau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:53:44 by challeau          #+#    #+#             */
-/*   Updated: 2020/01/10 09:34:23 by challeau         ###   ########.fr       */
+/*   Updated: 2020/02/08 14:39:08 by challeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 
 int				ft_strnlen(char *str, size_t n);
+char			*ft_realloc(char *ptr, int new_size);
 
 typedef	struct	s_list
 {

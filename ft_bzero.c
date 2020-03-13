@@ -14,7 +14,7 @@
 
 void	ft_bzero(char *str, size_t n)
 {
-	if (!str || n == 0)
+	if (!*str || n == 0)
 		return ;
 	while (n-- != 0)
 		str[n] = 0;

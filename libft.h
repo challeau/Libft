@@ -56,6 +56,9 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 
 int				ft_strnlen(char *str, size_t n);
 char			*ft_realloc(char *ptr, int new_size);
+void			ft_strlowcase(char *str);
+void			ft_strrev(char *str);
+void			ft_strcat(char *dst, char *src);
 
 typedef	struct	s_list
 {

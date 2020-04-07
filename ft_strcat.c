@@ -1,12 +1,12 @@
 #include "libft.h"
 
-void	ft_strcat(char *dst, char *src)
+char	*ft_strcat(char *dst, char *src)
 {
 	int i;
 
 	i = 0;
 	if (!dst || !src)
-		return ;
+	    return (NULL);
 	while (dst[i])
 		i++;
 	while (*src)
@@ -15,4 +15,5 @@ void	ft_strcat(char *dst, char *src)
 		i++;
 		src++;
 	}
+	return (dst);
 }

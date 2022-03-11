@@ -4,7 +4,7 @@
 A set of useful C functions.
 <br/>
 
-# Libft
+# Libft - Français
 > note: 115/100
 
 Un ensemble de fonctions utiles en C.
